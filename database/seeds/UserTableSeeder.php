@@ -41,9 +41,12 @@ class UserTableSeeder extends Seeder
 
         // 单独处理第一个用户的数据
         $user = User::find(1);
+        $user->assignRole('Founder');
         $user->name = 'lethe';
         $user->email = 'zxp_lethe@163.com';
         $user->avatar = 'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
         $user->save();
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
     }
 }
